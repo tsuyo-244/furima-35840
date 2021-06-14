@@ -27,16 +27,16 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column      | Type     | Options     |
-| ----------- | -------- | ----------- |
-| nickname    | string   | null: false |
-| email       | string   | null: false |
-| password    | string   | null: false |
-| l_name      | string   | null: false |
-| f_name      | string   | null: false |
-| l_name_kana | string   | null: false |
-| f_name_kana | string   | null: false |
-| birthday    | date     | null: false |
+| Column             | Type     | Options     |
+| -----------------  | -------- | ----------- |
+| nickname           | string   | null: false |
+| email              | string   | null: false |
+| encrypted_password | string   | null: false |
+| l_name             | string   | null: false |
+| f_name             | string   | null: false |
+| l_name_kana        | string   | null: false |
+| f_name_kana        | string   | null: false |
+| birthday           | date     | null: false |
 ### Association
 - has_many :items
 - has_many :buys
@@ -84,3 +84,6 @@ Things you may want to cover:
 | buy      | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :buy
+
+## ER図
+https://gyazo.com/9ab42fc9135b69bfa97a7301de9f2caf
