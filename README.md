@@ -57,7 +57,6 @@ Things you may want to cover:
 | user               | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :user
-- has_one_attached :image
 - has_one :buy
 
 ## buys テーブル
@@ -73,15 +72,15 @@ Things you may want to cover:
 
 ## addresses テーブル
 
-| Colum    | Type       | Options                        |
-| -------- | ---------- | -------------------------------|
-| postcode | string     | null: false                    |
-| state_id | integer    | null: false                    |
-| city     | string     | null: false                    |
-| street   | string     | null: false                    |
-| building | string     |                                |
-| phone    | string     | null: false                    |
-| buy      | references | null: false, foreign_key: true |
+| Colum       | Type       | Options                        |
+| ----------- | ---------- | -------------------------------|
+| postcode    | string     | null: false                    |
+| prefectures | integer    | null: false                    |
+| city        | string     | null: false                    |
+| street      | string     | null: false                    |
+| building    | string     |                                |
+| phone       | string     | null: false                    |
+| buy         | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :buy
 
