@@ -43,8 +43,8 @@ describe User do
         expect(@user.errors.full_messages).to include("Password can't be blank")
       end
       it 'passwordが5文字以下であれば登録できない' do
-        @user.password = '00000'
-        @user.password_confirmation = '00000'
+        @user.password = 'aa000'
+        @user.password_confirmation = 'aa000'
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
@@ -104,7 +104,7 @@ describe User do
         expect(@user.errors.full_messages).to include("Birthday can't be blank")
       end
       it 'passwordが全角のみだと登録できない' do
-        @user.password_confirmation = 'AAAAAA'
+        @user.password_confirmation = 'ＡＡＡＡＡＡ '
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
