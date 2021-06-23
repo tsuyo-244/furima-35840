@@ -6,7 +6,7 @@ class User < ApplicationRecord
          has_many :items
 
          PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/.freeze
-         NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
+         NAME_REGEX = /\A[ぁ-んァ-ン一-龥々]+\z/.freeze
          NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
          with_options  presence: true do
            validates :password, format: { with: PASSWORD_REGEX}

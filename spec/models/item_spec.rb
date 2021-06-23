@@ -96,15 +96,14 @@ describe Item do
         expect(@item.errors.full_messages).to include('Price is not a number')
       end
       it '商品価格が半角英数字混合では出品できない' do
-        binding.pry
         @item.price = 'aa300'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price is not a letters and numbers')
+        expect(@item.errors.full_messages).to include('Price is not a number')
       end
       it '商品価格が半角英字のみでは出品できない' do
         @item.price = 'aaaaa'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price is not a letters')
+        expect(@item.errors.full_messages).to include('Price is not a number')
       end
     end
   end
