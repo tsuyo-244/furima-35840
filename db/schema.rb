@@ -33,11 +33,6 @@ ActiveRecord::Schema.define(version: 2021_06_22_055224) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
@@ -45,15 +40,15 @@ ActiveRecord::Schema.define(version: 2021_06_22_055224) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "product"
-    t.text "description"
-    t.integer "category_id"
-    t.integer "condition_id"
-    t.integer "shipping_cost_id"
-    t.integer "shipping_origin_id"
-    t.integer "shipping_day_id"
-    t.integer "price"
-    t.bigint "user_id"
+    t.string "product", null: false
+    t.text "description", null: false
+    t.integer "category_id", null: false
+    t.integer "condition_id", null: false
+    t.integer "shipping_cost_id", null: false
+    t.integer "shipping_origin_id", null: false
+    t.integer "shipping_day_id", null: false
+    t.integer "price", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_items_on_user_id"
@@ -78,4 +73,5 @@ ActiveRecord::Schema.define(version: 2021_06_22_055224) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "items", "users"
 end
