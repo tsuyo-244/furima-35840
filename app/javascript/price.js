@@ -5,8 +5,8 @@ function price() {
   const profit = document.getElementById("profit")
   itemprice.addEventListener('input', function(){
     const values = itemprice.value
-    addtaxprice.innerHTML =Math.floor( values * 0.1 )
+    addtaxprice.innerHTML = values * 0.1
     profit.innerHTML = values - addtaxprice.innerHTML
 })
 }
-window.addEventListener('load', price)
+window.addEventListener('turbolinks:load', price)

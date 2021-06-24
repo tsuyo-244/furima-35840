@@ -58,6 +58,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_one :buy
+- has_one_attached :image
 
 ## buys テーブル
 
