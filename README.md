@@ -89,8 +89,3 @@ Things you may want to cover:
 https://gyazo.com/9ab42fc9135b69bfa97a7301de9f2caf
 
 
-1:rails db:rollback 
-2:rails db:migrate:status
-3:rails db:migrate
-4:rails s
-5:
