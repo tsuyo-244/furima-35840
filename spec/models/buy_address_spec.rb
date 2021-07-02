@@ -59,6 +59,16 @@ RSpec.describe BuyAddress, type: :model do
       @buy_address.valid?
       expect(@buy_address.errors.full_messages).to include("Phone is invalid")
     end
+    it 'phoneが9桁以下だと保存できないこと' do
+      @buy_address.phone = '08012345'
+      @buy_address.valid?
+      expect(@buy_address.errors.full_messages).to include("Phone is invalid")
+    end
+    it 'phoneが12桁以上だと保存できないこと' do
+      @buy_address.phone = '0801234567890'
+      @buy_address.valid?
+      expect(@buy_address.errors.full_messages).to include("Phone is invalid")
+    end
     it 'phoneに数字以外が混じっていた時は購入できないこと' do
       @buy_address.phone = '080aaaaaaaa'
       @buy_address.valid?
