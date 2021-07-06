@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          has_many :items
 
-         PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/.freeze
+         PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
          NAME_REGEX = /\A[ぁ-んァ-ン一-龥々]+\z/.freeze
          NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
          with_options  presence: true do

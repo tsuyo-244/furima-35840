@@ -36,8 +36,8 @@ Rails.application.configure do
 
   config.active_storage.service = :local
 
-  config.active_storage.service = :amazon
-  
+  config.active_storage.service = :local
+
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
